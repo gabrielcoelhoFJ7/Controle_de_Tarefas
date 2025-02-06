@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block conteudo %}
+
+    <form action="{{ url_for('editar', id=tarefa.id_tarefa) }}" method="POST">
+        <label>Nome</label>
+        <input type="text" name="form_nome" value="{{ tarefa.nome_tarefa }}" required>
+
+        <label>Data</label>
+        <input type="text" name="form_data" value="{{ tarefa.data }}">
+
+        <label>Horário</label>
+        <input type="text" name="form_horario" value="{{ tarefa.horario }}">
+
+        <label>Status</label>
+        <input type="text" name="form_status" value="{{ tarefa.status }}">
+        <hr>
+        <button type="submit">Salvar Alterações</button>
+    </form>
+
+{% endblock conteudo %}
