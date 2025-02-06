@@ -5,12 +5,23 @@
     <title>Cadastro de tarefas</title>
 </head>
 <body>
-    <h1>Tarefas</h1>
-    <hr>
+<h1>Tarefas</h1>
+<hr>
+
+<p>
     <a href="{{ url_for('cadastrar') }}">Cadastrar Tarefas</a>
-    <a href="{{ url_for('tarefa') }}">Tarefas</a>
-    <hr>
-    {% block conteudo %}
-    {% endblock %}
+</p>
+<p>
+    <a href="{{ url_for('listar') }}">Tarefas</a>
+</p>
+<hr>
+{%- for mensagem in get_flashed_messages() %}
+    <div class="flash-message">
+        {{ mensagem }}
+        <button class="close-button" onclick="this.parentElement.style.display='none';">X</button>
+    </div>
+{%- endfor %}
+{% block conteudo %}
+{% endblock %}
 </body>
 </html>

@@ -9,7 +9,8 @@
     <p>Data: {{ item.data }}</p>
     <p>Horário: {{ item.horario }}</p>
     <p>Status: {{ item.status }}</p>
-    <a href="{{ url_for('cadastrar', id_tarefa=item.id_tarefa) }}" >Editar</a>
+    <a href="{{ url_for('editar', id_tarefa=item.id_tarefa) }}" >Editar</a>
+    <a href="{{ url_for('deletar', id_tarefa=item.id_tarefa) }}" >Deletar</a>
 {% endfor %}
 
 {% endblock conteudo %}
